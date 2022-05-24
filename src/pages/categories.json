@@ -1,0 +1,182 @@
+[
+    {
+        "id": 1,
+        "cat": "mmorpg"
+    },
+    {
+        "id": 2,
+        "cat": "shooter"
+    },
+    {
+        "id": 3,
+        "cat": "strategy"
+    },
+    {
+        "id": 4,
+        "cat": "moba"
+    },
+    {
+        "id": 5,
+        "cat": "racing"
+    },
+    {
+        "id": 6,
+        "cat": "sports"
+    },
+    {
+        "id": 7,
+        "cat": "social"
+    },
+    {
+        "id": 8,
+        "cat": "sandbox"
+    },
+    {
+        "id": 9,
+        "cat": "open-world"
+    },
+    {
+        "id": 10,
+        "cat": "survival"
+    },
+    {
+        "id": 11,
+        "cat": "pvp"
+    },
+    {
+        "id": 12,
+        "cat": "pve"
+    },
+    {
+        "id": 13,
+        "cat": "pixel"
+    },
+    {
+        "id": 14,
+        "cat": "voxel"
+    },
+    {
+        "id": 15,
+        "cat": "zombie"
+    },
+    {
+        "id": 16,
+        "cat": "turn-based"
+    },
+    {
+        "id": 17,
+        "cat": "first-person"
+    },
+    {
+        "id": 18,
+        "cat": "third-Person"
+    },
+    {
+        "id": 19,
+        "cat": "top-down"
+    },
+    {
+        "id": 20,
+        "cat": "tank"
+    },
+    {
+        "id": 21,
+        "cat": "space"
+    },
+    {
+        "id": 22,
+        "cat": "sailing"
+    },
+    {
+        "id": 23,
+        "cat": "side-scroller"
+    },
+    {
+        "id": 24,
+        "cat": "superhero"
+    },
+    {
+        "id": 25,
+        "cat": "permadeath"
+    },
+    {
+        "id": 26,
+        "cat": "card"
+    },
+    {
+        "id": 27,
+        "cat": "battle-royale"
+    },
+    {
+        "id": 28,
+        "cat": "mmo"
+    },
+    {
+        "id": 29,
+        "cat": "mmofps"
+    },
+    {
+        "id": 30,
+        "cat": "mmotps"
+    },
+    {
+        "id": 31,
+        "cat": "3d"
+    },
+    {
+        "id": 32,
+        "cat": "2d"
+    },
+    {
+        "id": 33,
+        "cat": "anime"
+    },
+    {
+        "id": 34,
+        "cat": "fantasy"
+    },
+    {
+        "id": 35,
+        "cat": "sci-fi"
+    },
+    {
+        "id": 36,
+        "cat": "fighting"
+    },
+    {
+        "id": 37,
+        "cat": "action-rpg"
+    },
+    {
+        "id": 38,
+        "cat": "action"
+    },
+    {
+        "id": 39,
+        "cat": "military"
+    },
+    {
+        "id": 40,
+        "cat": "martial-arts"
+    },
+    {
+        "id": 41,
+        "cat": "flight"
+    },
+    {
+        "id": 42,
+        "cat": "low-spec"
+    },
+    {
+        "id": 43,
+        "cat": "tower-defense"
+    },
+    {
+        "id": 44,
+        "cat": "horror"
+    },
+    {
+        "id": 45,
+        "cat": "mmorts"
+    }
+]
