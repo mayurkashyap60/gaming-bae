@@ -6,53 +6,66 @@ import HomeIcon from "@mui/icons-material/Home";
 import FlashOnIcon from "@mui/icons-material/FlashOn";
 import ClassIcon from "@mui/icons-material/Class";
 import { Download, Settings, Timeline } from "@mui/icons-material";
+import { mobile } from "../../responsive";
 
 const Sidebar = (props) => {
   const MySidebar = styled.aside`
-    width: 20%;
-    height: 100%;
-    background-color: var(--secondary_clr);
-    border-right: 1px dashed var(--primary_clr);
-    overflow-x: hidden;
-    overflow-y: auto;
-    transition: 0.5s ease-in-out;
-  `;
+  width: 20%;
+  height: 100%;
+  background-color: var(--secondary_clr);
+  border-right: 1px dashed var(--primary_clr);
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: 0.5s ease-in-out;
+  ${mobile({
+    position: "absolute",
+    zIndex: "9",
+    left: "0",
+    top: "0",
+    bottom: "0",
+    width: "0%",
+  })}
+`;
   const Entry = styled.div`
-    width: 100%;
-    padding: 2rem 0rem;
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-  `;
+  width: 100%;
+  padding: 2rem 0rem;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+`;
   const Logo = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 97%;
-    margin: 0 auto;
-  `;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 97%;
+  margin: 0 auto;
+  ${mobile({
+    flexDirection: "column",
+    gap: "5px",
+  })}
+`;
   const LogoImg = styled.img`
-    width: 75px;
-    height: fit-content;
-    object-fit: cover;
-  `;
+  width: 75px;
+  height: fit-content;
+  object-fit: cover;
+`;
   const Text = styled.p`
-    font-family: "StreamerDemo";
-    margin: 0;
-    font-size: clamp(0.75rem, 1.75vw, 4rem);
-    margin-left: 15px;
-  `;
+  font-family: "StreamerDemo";
+  margin: 0;
+  font-size: clamp(0.75rem, 1.75vw, 4rem);
+  margin-left: 15px;
+`;
   const Navigation = styled.div`
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-direction: column;
-    width: 85%;
-    padding-top: 2.5rem;
-    margin-left: 0;
-  `;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 85%;
+  padding-top: 2.5rem;
+  margin-left: 0;
+`;
   const NavButton = styled(Button)({
     color: "var(--white)",
     marginBottom: "1rem",
@@ -76,7 +89,7 @@ const Sidebar = (props) => {
       >
         <Entry>
           <Logo>
-            <LogoImg src={logo}></LogoImg>
+            <a href="/"> <LogoImg src={logo}></LogoImg></a>
             <Text>GaMIng bAe</Text>
           </Logo>
           <Navigation>

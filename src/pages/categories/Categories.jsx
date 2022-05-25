@@ -4,6 +4,7 @@ import { useToggle } from "rooks";
 import logo from "../../images/bee.png";
 import ScreenshotMonitorIcon from "@mui/icons-material/ScreenshotMonitor";
 import PublishIcon from "@mui/icons-material/Publish";
+import { landscapeAndroid, landscapeIphone, mobile } from "../../responsive";
 import CodeIcon from "@mui/icons-material/Code";
 import SystemUpdateAltIcon from "@mui/icons-material/SystemUpdateAlt";
 import axios from "axios";
@@ -38,11 +39,15 @@ const ToggleBtn = styled.button`
   padding: 10px;
   box-shadow: 10px 10px 14px #3a2784, -5px -5px 30px var(--primary_clr);
   z-index: 99;
+  ${mobile({
+  display: "block",
+})}
 `;
 const Main = styled.main`
   position: relative;
   width: 80%;
   height: 100%;
+  ${mobile({ width: "100%" })}
 `;
 const Entry = styled.div`
   width: 100%;
@@ -51,7 +56,12 @@ const Entry = styled.div`
   overflow-x: hidden;
   padding-top: 10px;
   padding-left: 20px;
-  
+  ${landscapeAndroid({
+  height: "75%",
+})}
+  ${landscapeIphone({
+  height: "75%",
+})}
 `;
 const Parent = styled.div`
   padding: 1rem;
@@ -135,81 +145,81 @@ const Genre = styled.small`
   font-family: "StreamerDemo" !important;
 `;
 const ReadMore = styled(Link)({
-    color: "#ffffff !important",
-    textDecoration: "none !important",
-    background: "var(--primary_clr)",
-    padding: "2px 20px",
-    boxShadow: "1px 2px 20px 0px #000000",
+  color: "#ffffff !important",
+  textDecoration: "none !important",
+  background: "var(--primary_clr)",
+  padding: "2px 20px",
+  boxShadow: "1px 2px 20px 0px #000000",
 });
 
 const Categories = () => {
-    const [value, setValue] = useToggle(true);
-    var hide = value.toString();
-    const location = useLocation();
-    const path = location.pathname.split("/")[2];
-    const [catData, setCatData] = React.useState([]);
+  const [value, setValue] = useToggle(true);
+  var hide = value.toString();
+  const location = useLocation();
+  const path = location.pathname.split("/")[2];
+  const [catData, setCatData] = React.useState([]);
 
-    React.useEffect(() => {
-        const getCategories = async () => {
-            const res = await axios.get(
-                `https://www.freetogame.com/api/games?category=${path}`
-            );
-            setCatData(res.data);
-        };
-        getCategories();
-    }, [path]);
-    return (
-        <React.Fragment>
-            <Dash>
-                <Sidebar sidebar={hide === "false" ? "sidebar" : ""} />
-                <Main>
-                    <Topbar />
-                    <Entry>
-                        <Parent>
-                            {catData.map((data, i) => (
-                                <GameCard key={i}>
-                                    <GameImg src={data.thumbnail} alt={data.title} />
-                                    <Genre>{data.genre}</Genre>
-                                    <GameTitle>{data.title}</GameTitle>
-                                    <ShortDesc>{data.short_description}</ShortDesc>
-                                    <Details>
-                                        <DetailsDiv>
-                                            <ScreenshotMonitorIcon
-                                                style={{ color: "var(--primary_clr)" }}
-                                            ></ScreenshotMonitorIcon>
-                                            <Small>{data.platform}</Small>
-                                        </DetailsDiv>
-                                        <DetailsDiv>
-                                            <PublishIcon
-                                                style={{ color: "var(--primary_clr)" }}
-                                            ></PublishIcon>
-                                            <Small>{data.publisher}</Small>
-                                        </DetailsDiv>
-                                        <DetailsDiv>
-                                            <CodeIcon
-                                                style={{ color: "var(--primary_clr)" }}
-                                            ></CodeIcon>
-                                            <Small>{data.developer}</Small>
-                                        </DetailsDiv>
-                                        <DetailsDiv>
-                                            <SystemUpdateAltIcon
-                                                style={{ color: "var(--primary_clr)" }}
-                                            ></SystemUpdateAltIcon>
-                                            <Small>{data.release_date}</Small>
-                                        </DetailsDiv>
-                                    </Details>
-                                    <ReadMore to={`/preview/${data.id}`}>Read More...</ReadMore>
-                                </GameCard>
-                            ))}
-                        </Parent>
-                        <ToggleBtn onClick={setValue} style={{ float: "Right" }}>
-                            <img src={logo} style={{ width: "100%" }} alt="logo" />
-                        </ToggleBtn>
-                    </Entry>
-                </Main>
-            </Dash>
-        </React.Fragment>
-    )
+  React.useEffect(() => {
+    const getCategories = async () => {
+      const res = await axios.get(
+        `https://www.freetogame.com/api/games?category=${path}`
+      );
+      setCatData(res.data);
+    };
+    getCategories();
+  }, [path]);
+  return (
+    <React.Fragment>
+      <Dash>
+        <Sidebar sidebar={hide === "false" ? "sidebar" : ""} />
+        <Main>
+          <Topbar />
+          <Entry>
+            <Parent>
+              {catData.map((data, i) => (
+                <GameCard key={i}>
+                  <GameImg src={data.thumbnail} alt={data.title} />
+                  <Genre>{data.genre}</Genre>
+                  <GameTitle>{data.title}</GameTitle>
+                  <ShortDesc>{data.short_description}</ShortDesc>
+                  <Details>
+                    <DetailsDiv>
+                      <ScreenshotMonitorIcon
+                        style={{ color: "var(--primary_clr)" }}
+                      ></ScreenshotMonitorIcon>
+                      <Small>{data.platform}</Small>
+                    </DetailsDiv>
+                    <DetailsDiv>
+                      <PublishIcon
+                        style={{ color: "var(--primary_clr)" }}
+                      ></PublishIcon>
+                      <Small>{data.publisher}</Small>
+                    </DetailsDiv>
+                    <DetailsDiv>
+                      <CodeIcon
+                        style={{ color: "var(--primary_clr)" }}
+                      ></CodeIcon>
+                      <Small>{data.developer}</Small>
+                    </DetailsDiv>
+                    <DetailsDiv>
+                      <SystemUpdateAltIcon
+                        style={{ color: "var(--primary_clr)" }}
+                      ></SystemUpdateAltIcon>
+                      <Small>{data.release_date}</Small>
+                    </DetailsDiv>
+                  </Details>
+                  <ReadMore to={`/preview/${data.id}`}>Read More...</ReadMore>
+                </GameCard>
+              ))}
+            </Parent>
+            <ToggleBtn onClick={setValue} style={{ float: "Right" }}>
+              <img src={logo} style={{ width: "100%" }} alt="logo" />
+            </ToggleBtn>
+          </Entry>
+        </Main>
+      </Dash>
+    </React.Fragment>
+  )
 }
 
 export default Categories

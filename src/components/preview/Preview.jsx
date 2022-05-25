@@ -6,6 +6,7 @@ import Topbar from "../topbar/Topbar";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Autoplay, Pagination } from "swiper";
+import { landscapeAndroid, landscapeIphone, mobile } from "../../responsive";
 
 import logo from "../../images/bee.png";
 // Import Swiper styles
@@ -29,6 +30,7 @@ const Main = styled.main`
   position: relative;
   width: 80%;
   height: 100%;
+  ${mobile({ width: "100%" })}
 `;
 const ToggleBtn = styled.button`
   display: none;
@@ -45,6 +47,9 @@ const ToggleBtn = styled.button`
   padding: 10px;
   box-shadow: 10px 10px 14px #3a2784, -5px -5px 30px var(--primary_clr);
   z-index: 99;
+  ${mobile({
+  display: "block",
+})}
 `;
 const Entry = styled.div`
   width: 100%;
@@ -54,6 +59,15 @@ const Entry = styled.div`
   padding-top: 1.5rem;
   padding-left: 1rem;
   position: relative;
+  ${mobile({
+  paddingLeft: "0rem",
+})}
+  ${landscapeAndroid({
+  height: "75%",
+})}
+  ${landscapeIphone({
+  height: "75%",
+})}
 `;
 const GamePreview = styled.div`
   display: flex;
@@ -63,6 +77,10 @@ const GamePreview = styled.div`
 `;
 const GameSnip = styled.div`
   width: 35%;
+  ${mobile({
+  width: "90%",
+  margin: "auto",
+})}
 `;
 const GameImg = styled.img`
   width: 100%;
@@ -84,6 +102,12 @@ const GameText = styled.div`
   width: 65%;
   padding-left: 2.5rem;
   padding-top: 0.5rem;
+  ${mobile({
+  width: "90%",
+  margin: "auto",
+  paddingLeft: "0.5rem",
+  paddingTop: "1.25rem",
+})}
 `;
 const DataTitle = styled.p`
   font-family: "StreamerDemo";

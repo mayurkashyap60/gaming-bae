@@ -6,6 +6,7 @@ import Topbar from "../topbar/Topbar";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Autoplay } from "swiper";
+import { landscapeAndroid, landscapeIphone, mobile } from "../../responsive";
 
 import logo from "../../images/bee.png";
 // Import Swiper styles
@@ -30,6 +31,7 @@ const Main = styled.main`
   position: relative;
   width: 80%;
   height: 100%;
+  ${mobile({ width: "100%" })}
 `;
 const Entry = styled.div`
   width: 100%;
@@ -38,6 +40,12 @@ const Entry = styled.div`
   overflow-x: hidden;
   padding-top: 10px;
   padding-left: 20px;
+  ${landscapeAndroid({
+  height: "75%",
+})}
+  ${landscapeIphone({
+  height: "75%",
+})}
 `;
 const PopularHeading = styled.div`
   display: flex;
@@ -54,7 +62,7 @@ const Popular = styled.p`
   margin-bottom: 1rem;
 `;
 const Seeall = styled.p`
-  color: var(--white);
+  color: var(--primary_clr);
   margin: 0;
 `;
 const Slider = styled.div`
@@ -87,6 +95,9 @@ const GameImg = styled.img`
     visibility: visible;
     opacity: 1;
   }
+  ${mobile({
+  height: "200px",
+})}
 `;
 const GameHeading = styled.h3`
   font-size: clamp(1rem, 1vw, 2rem);
@@ -114,6 +125,9 @@ const ToggleBtn = styled.button`
   padding: 10px;
   box-shadow: 10px 10px 14px #3a2784, -5px -5px 30px var(--primary_clr);
   z-index: 99;
+  ${mobile({
+  display: "block",
+})}
 `;
 
 SwiperCore.use([Navigation, Autoplay]);

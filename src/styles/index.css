@@ -74,6 +74,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
+  cursor: pointer;
 }
 
 .dashboard .game-shadow .link {
@@ -117,4 +118,10 @@ body {
 }
 .dashboard .swiper-button-prev{
   top: 95%;
+}
+
+@media only screen and (max-width: 767px) {
+  .dashboard .sidebar{
+    width: 250px;
+  }
 }

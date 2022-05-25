@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { KeyboardArrowDown, Search } from "@mui/icons-material";
 import React from "react";
+import { landscapeAndroid, landscapeIphone, mobile } from "../../responsive";
 
 // import { landscapeAndroid, landscapeIphone, mobile } from "../../responsive";
 // import { makeStyles } from "@material-ui/core/styles";
@@ -19,7 +20,12 @@ const Nav = styled.nav`
   border-bottom: 1px dashed var(--primary_clr);
   padding: 0.75rem 1rem;
   height: 15%;
- 
+  ${landscapeAndroid({
+  height: "25%",
+})}
+  ${landscapeIphone({
+  height: "25%",
+})}
 `;
 const SearchBox = styled.div`
   flex: 9;
@@ -60,10 +66,15 @@ const UserImg = styled.img`
   padding: 5px;
   box-shadow: 10px 10px 14px #3a2784, -5px -5px 30px var(--primary_clr);
 
+  ${mobile({
+  width: "30px",
+  height: "30px",
+})}
 `;
 const UserName = styled.p`
   margin: 0;
   margin-left: 15px;
+  ${mobile({ display: "none" })}
 `;
 
 const Topbar = () => {
